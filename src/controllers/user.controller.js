@@ -40,7 +40,6 @@ export const findUserById = async (req, res, next) => {
     if (!user) {
       throw new NotFoundError("Usuario no encontrado")
     }
-
     res.status(200).json({
       message: "Usuario y bootcamps obtenidos con éxito",
       status: 200,
@@ -67,7 +66,6 @@ export const findAll = async (req, res, next) => {
     });
 
     isEmptyResponseData(users)
-
 
     res.status(200).json({
       message: "Usuarios obtenidos con éxito",

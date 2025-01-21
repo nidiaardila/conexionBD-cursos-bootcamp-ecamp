@@ -1,6 +1,5 @@
 import { DataTypes, Model } from "sequelize"
 
-
 export class Bootcamp extends Model {}
 
 export const initBootcamp = (dbConfig) => {
@@ -64,8 +63,6 @@ export const initBootcamp = (dbConfig) => {
                     timestamps: true,
                     paranoid: true
                    
-                }
-
-        
+                } 
     )
 }

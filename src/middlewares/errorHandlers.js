@@ -5,7 +5,7 @@ export const errorHandler = (err, req, res, next) => {
   if (!(err instanceof CustomError)) {
     err = new InternalServerError(
       err.message || "Error Inesperado",
-      "Tenemos un error imprevisto, por favor contacta con nuestro equipo de soporte"
+      "Ha ocurrido un error inesperado. Por favor, contacta a nuestro equipo de soporte técnico"
     );
   }
 

@@ -1,4 +1,3 @@
-
 import { Router } from 'express'
 import { createUser, deleteUserById, findAll, findUserById, updateUser } from '../controllers/user.controller.js';
 

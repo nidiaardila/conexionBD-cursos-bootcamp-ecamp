@@ -52,9 +52,7 @@ User.init(
                msg: "The email format is not valid.",
           }
         },
-        
       },
-
     },
 
     {
@@ -63,8 +61,6 @@ User.init(
         tableName: 'users',
         timestamps: true,
         paranoid: true
-  
     }
-
   );
 }

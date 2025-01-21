@@ -8,7 +8,6 @@ export const isArrayValidate = (data) => {
     );
 }
 
-
 export const isEmptyData = (data) => {
     if(!data || data.length === 0) {
         throw new ValidationError("The entered data is empty.")
@@ -22,13 +21,14 @@ export const isEmptyResponseData = (data) => {
 }
 
 /**
- * Valida si el dato está duplicado
- * @param {Model} Modelo - Modelo constructor de los datos que se comúnica con la DB
- * @param {object} data - Datos a evaluar en la petición hacia la DB 
- * @param {Array<string>} fields - Campo que se desea evaluar en la clausula Where
- * @param {string} excluidID - ID en formato UUID que será excluida de esta validación. Por defecto es null 
- * @throws {ValidationError} - Si el valor existe arrojara un error de validación 
+ * Valida si los datos están duplicados en la base de datos.
+ * @param {Model} Modelo - El constructor del modelo que interactúa con la base de datos.
+ * @param {object} data - Los datos que se deben evaluar en la petición hacia la base de datos.
+ * @param {Array<string>} fields - Los campos que se desean evaluar en la cláusula WHERE.
+ * @param {string} excluidID - El ID en formato UUID que se excluye de esta validación. Por defecto es null.
+ * @throws {ValidationError} - Si se encuentra un valor duplicado, se lanzará un error de validación.
  */
+
 export const validateExistData = async(Modelo, data, fields, excluidID = null ) => {
     const duplicatedFlieds = [];
 

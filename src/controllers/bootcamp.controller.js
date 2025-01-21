@@ -43,13 +43,13 @@ export const addUser = async (req, res, next) => {
       throw new NotFoundError("Bootcamp o Usuario no encontrado");
     }
 
-    //Verificar si el usuario ya está asociado al bootcamp
+    // Comprueba si el usuario ya está asociado al bootcamp
     const isAlreadyAssociated = await bootcamp.hasUser(user);
     if (isAlreadyAssociated) {
       throw new ValidationError("El usuario ya está asociado al bootcamp");
     }
 
-    // Asociar el usuario al bootcamp
+    // Agrega al usuario al bootcamp si no está asociado
     await bootcamp.addUser(user);
 
     res.status(200).json({
@@ -112,7 +112,7 @@ export const findAll = async (req, res, next) => {
   }
 };
 
-//Additional controllers to complete the CRUD
+// Controlador adicional para completar las operaciones CRUD: Actualizar un bootcamp
 
 export const updateBootcamp = async (req, res, next) => {
   try {

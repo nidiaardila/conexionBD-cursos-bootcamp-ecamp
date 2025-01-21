@@ -7,8 +7,8 @@ export const dbConfig = new Sequelize(name, user, pass, {
     host, dialect, port,
     dialectOptions: {
         ssl: {
-            require: true, // Obliga a usar SSL
-            rejectUnauthorized: false, // Desactiva la verificación de certificado
+            require: true, //Fuerza el uso de conexiones SSL para garantizar la seguridad de los datos
+            rejectUnauthorized: false, // Desactiva la verificación del certificado SSL (no recomendado en entornos de producción)
         },
     },
 });

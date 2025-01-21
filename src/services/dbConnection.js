@@ -2,7 +2,6 @@ import { dbConfig } from "../config/db.config.js";
 import { initModels } from "../utils/db/initModels.js";
 import { setupAssociation } from "../utils/db/setupAssociations.js";
 
-
 export const dbConnect = async() =>{
     try {
        await dbConfig.authenticate();
@@ -10,9 +9,9 @@ export const dbConnect = async() =>{
        setupAssociation()
        await dbConfig.sync({ alter:true })
 
-        console.log('Se logró la conexión a Postgres a través de Sequelize 😺')
+       console.log('Conexión exitosa a PostgreSQL mediante Sequelize 💪🏻');
     } catch (error) {
-        console.error('No pudimos conectarnos a la DB 🙀noooooooo', error);
+        console.error('No se pudo establecer la conexión con la base de datos 🚨', error);
         process.exit(1)
     }
 }
