@@ -6,6 +6,7 @@ import {
   validateExistData,
 } from "../utils/validations/validate.js";
 
+
 export const createBootcamp = async (req, res, next) => {
   try {
     await validateExistData(Bootcamp, req.body, ["title"]);
